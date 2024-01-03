@@ -1,0 +1,20 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    background-image:url(Images/background_1.png); /* Replace 'background.jpg' with your image file */
+    background-size: cover; /* Ensures the background image covers the entire body */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    height: 100vh;
+
+}
+
+h1 {
+    color: #ffffff;
+    margin: 0;       
+    font-size: 75px;
+    font-style: 'Arial';
+}
