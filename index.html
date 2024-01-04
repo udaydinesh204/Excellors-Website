@@ -18,6 +18,33 @@
             justify-content: center;
             text-align: center;
         }
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            background-color: #343131; /* Background color of the navigation bar */
+            padding: 10px;
+            display: flex;
+            justify-content: flex-end; /* Align items to the right */
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555; /* Hover color */
+        }
         h1, h3 {
             margin: 0; /* Remove default margin to ensure accurate centering */
             
@@ -28,6 +55,15 @@
     </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#client">Client</a>
+            <a href="#gallery">Gallery</a>
+        </nav>
+    </header>
     <!-- Your content goes here -->
     <h1 >
     Excellores Engineering Solutions</h1>
