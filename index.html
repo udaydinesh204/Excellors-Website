@@ -7,26 +7,45 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-image: url(Images/background_1.png);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             height: 100vh;
             display: flex;
-            flex-direction: column; /* Arrange children in a column */
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
         }
+
+        #background {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: fadeIn 5s infinite; /* Add fade-in-out animation */
+        }
+
+        @keyframes fadeIn {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
         header {
             position: fixed;
             top: 0;
             right: 0;
             left: 0;
-            background-color: #343131; /* Background color of the navigation bar */
+            background-color: #343131;
             padding: 10px;
             display: flex;
-            justify-content: flex-end; /* Align items to the right */
+            justify-content: flex-end;
         }
 
         nav {
@@ -43,18 +62,22 @@
         }
 
         nav a:hover {
-            background-color: #555; /* Hover color */
+            background-color: #555;
         }
+
         h1, h3 {
-            margin: 0; /* Remove default margin to ensure accurate centering */
-            
+            margin: 0;
+            position: relative;
+            z-index: 1;
         }
+
         .highlight {
-            color: #df1414; /* Red color */
+            color: #df1414;
         }
     </style>
 </head>
 <body>
+    <div id="background"></div>
     <header>
         <nav>
             <a href="#home">Home</a>
@@ -64,11 +87,28 @@
             <a href="#gallery">Gallery</a>
         </nav>
     </header>
-    <!-- Your content goes here -->
-    <h1 >
-    Excellores Engineering Solutions</h1>
+    <h1>
+        Excellores Engineering Solutions
+    </h1>
     <h3>An Initiative under <span class="highlight">ATMA NIRBHAR BHARAT</span></h3>
-    <!-- Add more HTML elements as needed -->
+
+    <!-- Your content goes here -->
+
+    <script>
+        // JavaScript for changing background images with smooth fade-in-out
+        const background = document.getElementById('background');
+        const images = ["url(Images/background_1.png)", "url(Images/background_2.jpg)"];
+        let index = 0;
+
+        function changeBackground() {
+            background.style.backgroundImage = images[index];
+            index = (index + 1) % images.length;
+            setTimeout(changeBackground, 5000);
+        }
+
+        // Initial call to start the slideshow
+        changeBackground();
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
